@@ -7,7 +7,7 @@ name: Coverity Scan
 on:
   push:
     branches:
-      - *  # You can specify branches here, or use '*' for all branches
+      - master
   workflow_dispatch:
 
 jobs:
