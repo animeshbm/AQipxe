@@ -19,10 +19,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Download Coverity Scan
         run: |
-          curl -L --form token=Z3FgV3exFnl8bLLNEzRhtw \
-            --form project=animeshbm/AQipxe \
-            --output coverity.tar.gz \
-            https://scan.coverity.com/download/cxx/linux64
+          curl -L --data "token=Z3FgV3exFnl8bLLNEzRhtw&project=AQ1Ipxe" --output coverity_tool.tgz https://scan.coverity.com/download/linux64
           mkdir -p /opt/coverity
           sudo tar xvzf coverity.tar.gz --strip 1 --directory /opt/coverity
       - name: Build via Coverity Scan
