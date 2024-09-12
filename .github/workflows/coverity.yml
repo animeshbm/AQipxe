@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Download Coverity Scan
         run: |
-          curl --form token=${{ secrets.COVERITY_SCAN_TOKEN }} \
+          curl --form token=Z3FgV3exFnl8bLLNEzRhtw \
                --form project=${{ github.repository }} \
                --output coverity.tar.gz \
                https://scan.coverity.com/download/cxx/linux64
@@ -34,8 +34,8 @@ jobs:
           tar cvzf cov-int.tar.gz cov-int
       - name: Submit to Coverity Scan
         run: |
-          curl --form token=${{ secrets.COVERITY_SCAN_TOKEN }} \
-               --form email=${{ secrets.COVERITY_SCAN_EMAIL }} \
+          curl --form token=Z3FgV3exFnl8bLLNEzRhtw \
+               --form email=animeshb@marvell.com \
                --form file=@cov-int.tar.gz \
                --form version=${{ github.sha }} \
                --form description=${{ github.ref }} \
